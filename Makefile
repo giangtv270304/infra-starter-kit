@@ -93,10 +93,13 @@ prod-apply-volume:
 # ============================================================
 # Utilities
 # ============================================================
-.PHONY: clean help
+.PHONY: clean fmt help
 
 clean:
 	rm -rf .terragrunt-cache
+
+fmt:
+	tofu fmt -recursive
 
 help:
 	@echo ""
@@ -126,5 +129,6 @@ help:
 	@echo "  Utilities"
 	@echo "  ─────────────────────────────────────"
 	@echo "  clean               Remove .terragrunt-cache"
+	@echo "  fmt                 Format all .tf files (tofu fmt -recursive)"
 	@echo "  help                Show this help"
 	@echo ""
